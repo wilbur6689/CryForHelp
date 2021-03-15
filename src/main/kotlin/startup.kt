@@ -14,23 +14,27 @@ fun main() {
     // load previous world or create a new one
     val landTypes = arrayOf("stone", "ore", "dirt", "grass", "trees")
     var currWorldMap = mutableMapOf<Double, String>()
-    var rowCount = 1.0
+    var rowCount = 0
     for (i in 1..colTotl) {
         var columnCount = 0.1
+        rowCount+=1
         //println("rowCount= " + rowCount)
         for (j in 1..rowsTotl) {
             //println("columnCount= " + columnCount)
             currWorldMap[rowCount.plus(columnCount)] = landTypes.random()
             columnCount += 0.1
         }
-        rowCount+=1
+
     }
 
-    println(currWorldMap)
+    println("------------------------------------")
 
-    for (i in currWorldMap) {
-        //println(currWorldMap.get(i))
-    }
+    println("current World Map = $currWorldMap")
+    println(rowCount)
+    println(currWorldMap.size)
+
+
+    println("------------------------------------")
 
 
     // load/create all the required resources required for the game
